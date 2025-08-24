@@ -1,0 +1,98 @@
+<!doctype html>
+<!-- 
+  Ejemplos sobre Three.js : Cubo texturado animado
+   	Cubo con color por vertice y mapa uv sobre textura en cruz;
+   	Util para comprobar si funciona Threejs sobre el navegador.
+  rvivo@upv.es 2022
+-->
+<html lang="es">
+	<head>
+		<meta charset='utf-8'>
+		<title>Dolphin Simulator</title>
+		<style>
+			body {
+				background-color: #000;
+				margin: 0px;
+				overflow: hidden;
+			}
+
+			#minimap {
+				position: absolute;
+				right: 2rem;
+				bottom: 2rem;
+				height: 350px;
+				width: 350px;
+				box-shadow: 1px 1px 5px 3px rgba(0,0,0,0.5);
+			}
+
+			#score {
+				position: absolute;
+				top: 1rem;
+				right: 1rem;
+				color: white;
+				font-size: 2rem;
+				background-color: rgba(0, 0, 0, 0.5);
+				padding: 0.5rem 1rem;
+				border-radius: 5px;
+			}
+
+			#banner {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: white;
+				font-size: 3rem;
+				background-color: rgba(0, 0, 0, 0.7);
+				padding: 1rem 2rem;
+				border-radius: 10px;
+        	}
+		</style>
+
+		<link rel="icon" href="images/dolphin_icon.png" type="image/x-icon">
+	</head>
+	<body> 
+
+		<div id="minimap"></div>
+		<div id="score">0</div>
+
+		<div id="banner">
+			W / S => Acelerar / Frenar <br>
+			(A-D) o (J-L)  => Mover cámara horizontalmente <br>
+			(I-K) => Mover cámara verticalmente <br>
+			<br>
+			Espacio => Pausar / Jugar <br>
+			R => Invertir la cámara vertical<br>
+			<br>
+			N => Cambiar entre día y noche<br>
+			3 => Invocar delfín fantasma
+		</div>
+
+		<!-- Contenedor del app -->
+		<div id="container"></div>
+
+		<!-- Nuevas librerías añadidas-->
+		<script src=" https://cdn.jsdelivr.net/npm/lil-gui@0.19.2/dist/lil-gui.umd.min.js "></script>
+		<link href=" https://cdn.jsdelivr.net/npm/lil-gui@0.19.2/dist/lil-gui.min.css " rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/25.0.0/tween.umd.js" integrity="sha512-UB3eFQlXP9zz/G459VyviWSLDbYnrU9jRY81/yjdMSh/GtILylnyRB77EnyCBLal6TLInl4gn6ix5hSON/JXXQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js" integrity="sha512-avLcnGxl5mqAX/wIKERdb1gFNkOLHh2W5JNCfJm5OugpEPBz7LNXJJ3BDjjwO00AxEY1MqdNjtEmiYhKC0ld7g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+		<!-- Scripts de biblioteca -->
+		<script src="lib/three.min_r140.js"></script>
+		<script src="lib/OrbitControls.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+		<script src="lib/GLTFLoader.js"></script>
+
+
+		<!-- Scripts de biblioteca -->
+		<script src="js/keyListener.js"></script>
+		<script src="js/Terrain.js"></script>
+		<script src="js/Dolphin.js"></script>
+		<script src="js/Ring.js"></script>
+		<script src="js/EvilDolphin.js"></script>
+
+		<script src="js/test.js"></script>
+		
+		
+	</body>
+</html>
